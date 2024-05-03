@@ -1,0 +1,46 @@
+{
+    "Network": {
+      "ListenAddrs": [
+        "/ip4/0.0.0.0/tcp/4001",
+        "/ip4/0.0.0.0/udp/4001/quic-v1",
+        "/ip4/0.0.0.0/udp/4001/quic-v1/webtransport"
+      ],
+      "AnnounceAddrs": null
+    },
+    "ConnMgr": {
+      "ConnMgrLo": 1000,
+      "ConnMgrHi": 50000,
+      "ConnMgrGrace": 12000000000000
+    },
+    "RelayV1": {
+      "Enabled": false,
+      "Resources": {
+        "MaxCircuits": 1024,
+        "MaxCircuitsPerPeer": 64,
+        "BufferSize": 4096
+      }
+    },
+    "RelayV2": {
+      "Enabled": true,
+      "Resources": {
+        "Limit": {
+          "Duration": 12000000000000,
+          "Data": 17179869184
+        },
+        "ReservationTTL": 360000000000000,
+        "MaxReservations": 512,
+        "MaxCircuits": 512,
+        "BufferSize": 8192,
+        "MaxReservationsPerPeer": 16,
+        "MaxReservationsPerIP": 32,
+        "MaxReservationsPerASN": 64
+      }
+    },
+    "ACL": {
+      "AllowPeers": null,
+      "AllowSubnets": null
+    },
+    "Daemon": {
+      "PprofPort": 6060
+    }
+  }

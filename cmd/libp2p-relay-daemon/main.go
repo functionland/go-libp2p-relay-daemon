@@ -9,6 +9,7 @@ import (
 
 	"github.com/libp2p/go-libp2p"
 	relaydaemon "github.com/libp2p/go-libp2p-relay-daemon"
+	"github.com/libp2p/go-libp2p/core/network"
 	"github.com/libp2p/go-libp2p/p2p/net/connmgr"
 	relayv2 "github.com/libp2p/go-libp2p/p2p/protocol/circuitv2/relay"
 	ma "github.com/multiformats/go-multiaddr"
@@ -44,6 +45,7 @@ func main() {
 		libp2p.Identity(privk),
 		libp2p.DisableRelay(),
 		libp2p.ListenAddrStrings(cfg.Network.ListenAddrs...),
+		libp2p.ResourceManager(&network.NullResourceManager{}),
 	)
 
 	// load PSK if applicable

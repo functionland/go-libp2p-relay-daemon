@@ -5,6 +5,8 @@
 *.so
 *.dylib
 libp2p-relay-daemon
+.secret
+.history
 
 # Test binary, built with `go test -c`
 *.test
